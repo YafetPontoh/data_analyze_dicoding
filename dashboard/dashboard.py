@@ -27,7 +27,7 @@ def create_daily_orders_df(df):
 
 # Fungsi untuk membuat month_orders
 def create_month_orders_df(df):
-    month_orders = df.resample(rule='M', on='order_purchase_timestamp').agg({
+    month_orders = df.resample(rule='ME', on='order_purchase_timestamp').agg({
         'order_id': 'nunique',
         'payment_value': 'sum'
     })
